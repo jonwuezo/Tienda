@@ -17,7 +17,7 @@
                     </li>
                     <li th:each="producto : ${productos}" class="nav-item">
                         <a class="nav-link" 
-                           th:href="@{/pruebas/listado/}+${producto.idCategoria}"
+                           th:href="@{/pruebas/listado/}+${producto.idProducto}"
                            >[[${producto.descripcion}]]</a>
                     </li>                    
                 </ul>
