@@ -5,8 +5,8 @@
         <title>TechShop</title>
     </head>
     <body>
-        <!-- 1 Sección principal para mostrar la informaccion de las categorias -->
-        <section th:fragment="categoriasTabs" id="categorias">
+        <!-- 1 Sección principal para mostrar la informaccion de las productos -->
+        <section th:fragment="productosTabs" id="productos">
             <div class="row py-4">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -15,10 +15,10 @@
                            href="/pruebas/listado"
                            >[[#{pruebas.todas}]]</a>
                     </li>
-                    <li th:each="categoria : ${categorias}" class="nav-item">
+                    <li th:each="producto : ${productos}" class="nav-item">
                         <a class="nav-link" 
-                           th:href="@{/pruebas/listado/}+${categoria.idCategoria}"
-                           >[[${categoria.descripcion}]]</a>
+                           th:href="@{/pruebas/listado/}+${producto.idCategoria}"
+                           >[[${producto.descripcion}]]</a>
                     </li>                    
                 </ul>
             </div>
