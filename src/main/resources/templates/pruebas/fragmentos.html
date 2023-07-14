@@ -71,7 +71,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 3 Sección para crear los filtros -->
         <section th:fragment="filtros" class="bg-light">
             <div class="row py-2">
@@ -102,8 +102,7 @@
                         </div>
                     </form>
                 </div>   
-            </div>
-            <div class="col-md-3">
+                <div class="col-md-3">
                     <form method="POST" th:action="@{/pruebas/query2}" 
                           class="was-validated">
                         <div class="card">                            
@@ -129,7 +128,7 @@
                         </div>
                     </form>
                 </div>
-            <div class="col-md-3">
+                <div class="col-md-3">
                     <form method="POST" th:action="@{/pruebas/query3}" 
                           class="was-validated">
                         <div class="card success">
@@ -155,7 +154,7 @@
                         </div>
                     </form>
                 </div>
-
-        </section>
+            </div>
+        </section> 
     </body>
 </html>
