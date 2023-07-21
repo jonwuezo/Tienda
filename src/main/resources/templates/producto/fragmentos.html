@@ -85,7 +85,6 @@
                                             <td>[[${producto.descripcion}]]</td>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
                                             <td sec:authorize="hasRole('ROLE_ADMIN')">
-                                            <td>
                                                 <a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
