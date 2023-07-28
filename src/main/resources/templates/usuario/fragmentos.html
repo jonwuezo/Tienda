@@ -145,6 +145,7 @@
                           enctype="multipart/form-data">
                         <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
                         <input type="hidden" name="password" th:field="*{password}"/>
+                        <input type="hidden" name="username" th:field="*{username}"/>
                         <section th:replace="~{usuario/fragmentos :: botonesEditar}"/>
                         <div id=details>
                             <div class="container">
