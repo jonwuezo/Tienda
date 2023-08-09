@@ -50,8 +50,43 @@ public class ReporteController {
         var reporte = "ventas";
         return reporteService.generaReporte(reporte, null, tipo);
     }
+    
+    @GetMapping("/cobrar")
+    public ResponseEntity<Resource> reporteCuentasCobrar(@RequestParam String tipo)
+            throws IOException {
+        var reporte = "cobrar";
+        return reporteService.generaReporte(reporte, null, tipo);
+    }
+    
+    @GetMapping("/pagar")
+    public ResponseEntity<Resource> reporteCuentasPagar(@RequestParam String tipo)
+            throws IOException {
+        var reporte = "pagar";
+        return reporteService.generaReporte(reporte, null, tipo);
+    }
+    
+    @GetMapping("/cuentas")
+    public ResponseEntity<Resource> reporteCuentaClientes(@RequestParam String tipo)
+            throws IOException {
+        var reporte = "cuentas";
+        return reporteService.generaReporte(reporte, null, tipo);
+    }
+    
+    @GetMapping("/retencion")
+    public ResponseEntity<Resource> reporteRetencionClientes(@RequestParam String tipo)
+            throws IOException {
+        var reporte = "retencion";
+        return reporteService.generaReporte(reporte, null, tipo);
+    }
+    
+    @GetMapping("/compras")
+    public ResponseEntity<Resource> reporteCompras(@RequestParam String tipo)
+            throws IOException {
+        var reporte = "compras";
+        return reporteService.generaReporte(reporte, null, tipo);
+    }
 
-    @GetMapping("/eventasTotales")
+    @GetMapping("/ventasTotales")
     public ResponseEntity<Resource> reporteVentasTotales(
             @RequestParam String fechaInicio,
             @RequestParam String fechaFin,
@@ -61,6 +96,71 @@ public class ReporteController {
         parametros.put("fechaInicio", fechaInicio);
         parametros.put("fechaFin", fechaFin);
         var reporte = "ventasTotales";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+    }
+    
+    @GetMapping("/reportesComerciales")
+    public ResponseEntity<Resource> reporteComercial(
+            @RequestParam String fechaInicio,
+            @RequestParam String fechaFin,
+            @RequestParam String tipo) throws IOException {
+
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("fechaInicio", fechaInicio);
+        parametros.put("fechaFin", fechaFin);
+        var reporte = "reportesComerciales";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+    }
+    
+    @GetMapping("/ventas")
+    public ResponseEntity<Resource> reporteVentas(
+            @RequestParam String fechaInicio,
+            @RequestParam String fechaFin,
+            @RequestParam String tipo) throws IOException {
+
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("fechaInicio", fechaInicio);
+        parametros.put("fechaFin", fechaFin);
+        var reporte = "ventas";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+    }
+    
+    @GetMapping("/proveedores")
+    public ResponseEntity<Resource> reporteProveedores(
+            @RequestParam String fechaInicio,
+            @RequestParam String fechaFin,
+            @RequestParam String tipo) throws IOException {
+
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("fechaInicio", fechaInicio);
+        parametros.put("fechaFin", fechaFin);
+        var reporte = "proveedores";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+    }
+    
+    @GetMapping("/utilidadClientes")
+    public ResponseEntity<Resource> reporteUtilidadClientes(
+            @RequestParam String fechaInicio,
+            @RequestParam String fechaFin,
+            @RequestParam String tipo) throws IOException {
+
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("fechaInicio", fechaInicio);
+        parametros.put("fechaFin", fechaFin);
+        var reporte = "utilidadClientes";
+        return reporteService.generaReporte(reporte, parametros, tipo);
+    }
+    
+    @GetMapping("/utilidad")
+    public ResponseEntity<Resource> reporteUtilidad(
+            @RequestParam String fechaInicio,
+            @RequestParam String fechaFin,
+            @RequestParam String tipo) throws IOException {
+
+        Map<String, Object> parametros = new HashMap();
+        parametros.put("fechaInicio", fechaInicio);
+        parametros.put("fechaFin", fechaFin);
+        var reporte = "utilidad";
         return reporteService.generaReporte(reporte, parametros, tipo);
     }
 
