@@ -112,7 +112,7 @@ public class ReporteController {
         return reporteService.generaReporte(reporte, parametros, tipo);
     }
     
-    @GetMapping("/ventas")
+    @GetMapping("/Rventas")
     public ResponseEntity<Resource> reporteVentas(
             @RequestParam String fechaInicio,
             @RequestParam String fechaFin,
